@@ -1,24 +1,33 @@
-"""This module recursively walks through a path searching for 
-the given file name. 
+"""shell-utils contains a series of python modules that will
+attempt to replicate some of the most used Unix/Linux command
+utilities behavior such as:
 
-If the file name is not found it will return nothing, otherwise
-it will return its details.
-
-If the path is not passed as the sencond argument it will search
-on the current directory.
+find
+grep
 
 NOTE:
-This utility is for study purpose only, it tries to replicate 
-the find utility command behavior found in most Unix/Linux systems.
+These modules were developed for study purpose only, but feel
+free to check it out, use, comment, point out any issues and
+improvements that may be necessary.
 """
 import sys
 import os
 
 
 def find(file_name, path=None):
-    """It expects a file name as its primary argument followed by an 
+    """This module recursively walks through a path searching for
+    the given file name.
+
+    If the file name is not found it will return nothing, otherwise
+    it will return its details.
+
+    If the path is not passed as the second argument it will search
+    on the current directory.
+
+    It expects a file name as its primary argument followed by an
     optional path argument which will be used to initiate the search.
     """
+
     if not path:
         path = os.getcwd()
 

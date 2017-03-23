@@ -1,4 +1,4 @@
-"""shell-utils contains a series of python modules that will
+"""shell_utils contains a series of python modules that will
 attempt to replicate some of the most used Unix/Linux command
 utilities behavior such as:
 

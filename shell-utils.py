@@ -56,18 +56,35 @@ def get_file_details(file_name):
 
     return s_dict
 
+
 def main():
-    if len(sys.argv) == 2:
-        arg1 = sys.argv[1]
-        find(arg1)
-    elif len(sys.argv) == 3:
-        arg1 = sys.argv[1]
+    """If called directly module and its parameters has to
+    be specified"""
+
+    n_args = len(sys.argv)
+    if n_args > 2 and sys.argv[1] == 'find':
         arg2 = sys.argv[2]
-        find(arg1, arg2)
+        arg3 = None
+
+        if n_args > 3:
+            arg3 = sys.argv[3]
+
+        find(arg2, arg3)
     else:
-        print("Please specify the file that you're looking for")
-        return(-1)
+        message = \
+"""You have to specify one of the available modules that you
+wish to use with its respective required earameters.
+
+Usage:
+    shell-utils module_name module_parameters
+
+Available modules:
+    find:
+        shell-utils.py find file_name [path]
+"""
+        print(message)
 
 
 if __name__ == '__main__':
     main()
+
